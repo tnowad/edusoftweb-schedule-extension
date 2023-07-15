@@ -2,23 +2,25 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
-  extends: [
-    "react-app",
-    "plugin:jsx-a11y/recommended",
-    "prettier",
-    "plugin:react-hooks/recommended",
-  ],
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+  extends: ["standard-with-typescript", "plugin:react/recommended"],
+  overrides: [
+    {
+      env: {
+        node: true,
+      },
+      files: [".eslintrc.{js,cjs}"],
+      parserOptions: {
+        sourceType: "script",
+      },
     },
-    ecmaVersion: 12,
+  ],
+  parserOptions: {
+    ecmaVersion: "latest",
     sourceType: "module",
-    tsconfigRootDir: "./",
-    project: "./tsconfig.json",
+    project: "tsconfig.json",
   },
-  plugins: ["react", "jsx-a11y"],
+  plugins: ["react"],
   rules: {},
 };
