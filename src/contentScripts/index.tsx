@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import browser from "webextension-polyfill";
 import { ContentApp } from "./views/ContentApp";
+import { ThemeProvider } from "@material-tailwind/react";
 
 (() => {
   const scheduleTabButton = document.querySelector<HTMLInputElement>(
@@ -28,7 +29,9 @@ import { ContentApp } from "./views/ContentApp";
 
   ReactDOM.render(
     <React.StrictMode>
-      <ContentApp />
+      <ThemeProvider>
+        <ContentApp />
+      </ThemeProvider>
     </React.StrictMode>,
     root
   );
