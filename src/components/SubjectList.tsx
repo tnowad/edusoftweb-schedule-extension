@@ -1,22 +1,22 @@
-import Subject from '~/interfaces/Subject'
-import { parsePeriodTime } from '~/utils/parseData'
+import Subject from "~/interfaces/Subject";
+import { parsePeriodTime } from "~/utils/parseData";
 
 export default function SubjectList({
   subjects,
-  currentDate = new Date()
+  currentDate = new Date(),
 }: {
-  subjects: Subject[]
-  currentDate?: Date
+  subjects: Subject[];
+  currentDate?: Date;
 }) {
-  console.log(subjects)
+  console.log(subjects);
   subjects = subjects.filter((subject) => {
-    const currentDayOfWeek = currentDate.getDay()
+    const currentDayOfWeek = currentDate.getDay();
     return (
       subject.dayOfWeek - 1 === currentDayOfWeek &&
       currentDate.getTime() >= new Date(subject.weeks[0]).getTime() &&
       currentDate.getTime() <= new Date(subject.weeks[1]).getTime()
-    )
-  })
+    );
+  });
   return (
     <ul className="space-y-4">
       {subjects.length > 0 ? (
@@ -27,10 +27,10 @@ export default function SubjectList({
                 <div className="font-bold w-[200px]">{subject.subjectName}</div>
                 <div className="min-w-[50px]">{subject.room}</div>
                 <div className="min-w-[100px]">
-                  {parsePeriodTime(subject.startingPeriod).start} -{' '}
+                  {parsePeriodTime(subject.startingPeriod).start} -{" "}
                   {
                     parsePeriodTime(
-                      subject.startingPeriod + subject.numberOfPeriods - 1
+                      subject.startingPeriod + subject.numberOfPeriods - 1,
                     ).end
                   }
                 </div>
@@ -47,7 +47,7 @@ export default function SubjectList({
                 new Date().toLocaleDateString()
                   ? "You don't have any subject today!!! 😍"
                   : `You don't have subjects on ${currentDate.toLocaleDateString(
-                      'vi-VN'
+                      "vi-VN",
                     )}`}
               </div>
               <div className="italic">-</div>
@@ -56,5 +56,5 @@ export default function SubjectList({
         </li>
       )}
     </ul>
-  )
+  );
 }

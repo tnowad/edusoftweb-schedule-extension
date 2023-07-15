@@ -1,30 +1,31 @@
 /* eslint-disable no-console */
-import React from 'react'
-import ReactDOM from 'react-dom'
-import browser from 'webextension-polyfill'
-import { ContentApp } from './views/ContentApp'
-import { ThemeProvider } from '@material-tailwind/react'
+import React from "react";
+import ReactDOM from "react-dom";
+import browser from "webextension-polyfill";
+import { ContentApp } from "./views/ContentApp";
+import { ThemeProvider } from "@material-tailwind/react";
 
-;(() => {
+(() => {
   const scheduleTabButton = document.querySelector<HTMLInputElement>(
-    '#ctl00_ContentPlaceHolder1_ctl00_rad_ThuTiet'
-  )
+    "#ctl00_ContentPlaceHolder1_ctl00_rad_ThuTiet",
+  );
 
-  if (!scheduleTabButton?.checked) return
+  if (!scheduleTabButton?.checked) return;
 
-  const container = document.createElement('div')
-  const root = document.createElement('div')
-  const styleEl = document.createElement('link')
+  const container = document.createElement("div");
+  const root = document.createElement("div");
+  const styleEl = document.createElement("link");
   const shadowDOM =
-    container.attachShadow?.({ mode: __DEV__ ? 'open' : 'closed' }) || container
-  styleEl.setAttribute('rel', 'stylesheet')
+    container.attachShadow?.({ mode: __DEV__ ? "open" : "closed" }) ||
+    container;
+  styleEl.setAttribute("rel", "stylesheet");
   styleEl.setAttribute(
-    'href',
-    browser.runtime.getURL('dist/contentScripts/style.css')
-  )
-  shadowDOM.appendChild(styleEl)
-  shadowDOM.appendChild(root)
-  document.body.appendChild(container)
+    "href",
+    browser.runtime.getURL("dist/contentScripts/style.css"),
+  );
+  shadowDOM.appendChild(styleEl);
+  shadowDOM.appendChild(root);
+  document.body.appendChild(container);
 
   ReactDOM.render(
     <React.StrictMode>
@@ -32,6 +33,6 @@ import { ThemeProvider } from '@material-tailwind/react'
         <ContentApp />
       </ThemeProvider>
     </React.StrictMode>,
-    root
-  )
-})()
+    root,
+  );
+})();

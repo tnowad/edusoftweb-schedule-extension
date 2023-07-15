@@ -3,10 +3,7 @@
     "baseUrl": ".",
     "module": "ESNext",
     "target": "es2016",
-    "lib": [
-      "DOM",
-      "ESNext"
-    ],
+    "lib": ["DOM", "ESNext"],
     "strict": true,
     "esModuleInterop": true,
     "incremental": false,
@@ -17,14 +14,9 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "~/*": [
-        "src/*"
-      ]
+      "~/*": ["src/*"]
     },
     "jsx": "react-jsx"
   },
-  "include": [
-    "src",
-    "scripts"
-  ]
+  "exclude": ["dist", "node_modules"]
 }
