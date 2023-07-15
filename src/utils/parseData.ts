@@ -18,11 +18,13 @@ export const parseDayOfWeek = (day: string): number => {
   return daysOfWeek[day];
 };
 
-export const parseWeeks = (weeksText: string): Date[] => {
+export const parseWeeks = (weeksText: string): number[] => {
   // convert to time in number
   return weeksText
     .split("--")
-    .map((week) => new Date(week.replace(/(\d+[/])(\d+[/])/, "$2$1")));
+    .map((week) =>
+      new Date(week.replace(/(\d+[/])(\d+[/])/, "$2$1")).getTime()
+    );
 };
 
 export const parseSubject = (tdElements: Element[]): Subject => {

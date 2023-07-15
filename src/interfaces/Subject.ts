@@ -12,6 +12,6 @@ export default interface Subject {
   numberOfPeriods: number;
   room: string;
   lecturer: string;
-  weeks: Date[];
+  weeks: number[];
   color?: number;
 }

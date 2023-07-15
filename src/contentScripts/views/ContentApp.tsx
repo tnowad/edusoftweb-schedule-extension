@@ -4,10 +4,10 @@ import { fillColor, parseSubject } from "~/utils/parseData";
 import { Button, Alert, Typography } from "@material-tailwind/react";
 import Subject from "~/interfaces/Subject";
 import "~/styles";
+import { storage } from "webextension-polyfill";
 
 export const ContentApp = () => {
   const [showAlert, setShowAlert] = useState(false);
-
   const getData = (): Subject[] => {
     const trElements = Array.from(document.querySelectorAll(".body-table tr"));
     const data = trElements.map((trElement) =>
@@ -19,7 +19,8 @@ export const ContentApp = () => {
 
   const handleButtonClick = () => {
     setShowAlert(true);
-    console.log(getData());
+    const data = getData();
+    storage.local.set({ subject: data });
   };
 
   return (
@@ -30,6 +31,9 @@ export const ContentApp = () => {
           variant="outlined"
           className="rounded-full"
           onClick={handleButtonClick}
+          nonce={() => {}}
+          onResize={() => {}}
+          onResizeCapture={() => {}}
         >
           {" "}
           Sync Schedule
