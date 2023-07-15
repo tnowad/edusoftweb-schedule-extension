@@ -23,14 +23,14 @@ export const parseWeeks = (weeksText: string): number[] => {
   return weeksText
     .split("--")
     .map((week) =>
-      new Date(week.replace(/(\d+[/])(\d+[/])/, "$2$1")).getTime()
+      new Date(week.replace(/(\d+[/])(\d+[/])/, "$2$1")).getTime(),
     );
 };
 
 export const parseSubject = (tdElements: Element[]): Subject => {
   const subjectText = tdElements.reduce(
     (previous, current) => `${previous + (current as HTMLElement).innerText}|`,
-    ""
+    "",
   );
   const subjectFields = subjectText.split("|");
 
@@ -53,7 +53,7 @@ export const parseSubject = (tdElements: Element[]): Subject => {
 };
 
 export const parsePeriodTime = (
-  period: number
+  period: number,
 ): { start: string; end: string } => {
   const periodTime: Record<number, { start: string; end: string }> = {
     1: { start: "07:00", end: "07:50" },

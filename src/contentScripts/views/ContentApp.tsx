@@ -11,7 +11,7 @@ export const ContentApp = () => {
   const getData = (): Subject[] => {
     const trElements = Array.from(document.querySelectorAll(".body-table tr"));
     const data = trElements.map((trElement) =>
-      parseSubject(Array.from(trElement.querySelectorAll("td")))
+      parseSubject(Array.from(trElement.querySelectorAll("td"))),
     );
 
     return fillColor(data);

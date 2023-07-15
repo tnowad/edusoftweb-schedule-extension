@@ -39,7 +39,7 @@ browser.tabs.onActivated.addListener(async ({ tabId }) => {
   sendMessage(
     "tab-prev",
     { title: tab.title },
-    { context: "content-script", tabId }
+    { context: "content-script", tabId },
   );
 });
 

@@ -111,7 +111,7 @@ export function SubjectTable({
           // loop 82 - current total number of periods to create empty cells
           [
             ...Array(
-              82 - subjects.reduce((acc, cur) => acc + cur.numberOfPeriods, 0)
+              82 - subjects.reduce((acc, cur) => acc + cur.numberOfPeriods, 0),
             ),
           ].map((_, index) => {
             return <div className="shadow-sm" key={"empty" + index} />;

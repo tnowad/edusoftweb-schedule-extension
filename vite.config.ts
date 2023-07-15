@@ -35,7 +35,7 @@ export const sharedConfig: UserConfig = {
       transformIndexHtml(html, { path }) {
         return html.replace(
           /"\/assets\//g,
-          `"${relative(dirname(path), "/assets")}/`
+          `"${relative(dirname(path), "/assets")}/`,
         );
       },
     },
