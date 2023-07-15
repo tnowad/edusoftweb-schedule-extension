@@ -1,20 +1,16 @@
 /* eslint-disable no-console */
 import React from "react";
 import ReactDOM from "react-dom";
-import { onMessage } from "webext-bridge";
 import browser from "webextension-polyfill";
 import { ContentApp } from "./views/ContentApp";
 
-// Firefox `browser.tabs.executeScript()` requires scripts return a primitive value
 (() => {
-  console.info("[vitesse-webext] Hello world from content script");
+  const scheduleTabButton = document.querySelector<HTMLInputElement>(
+    "#ctl00_ContentPlaceHolder1_ctl00_rad_ThuTiet"
+  );
 
-  // communication example: send previous tab title from background page
-  onMessage("tab-prev", ({ data }) => {
-    console.log(`[vitesse-webext] Navigate from page "${data}"`);
-  });
+  if (!scheduleTabButton?.checked) return;
 
-  // mount component to context window
   const container = document.createElement("div");
   const root = document.createElement("div");
   const styleEl = document.createElement("link");
