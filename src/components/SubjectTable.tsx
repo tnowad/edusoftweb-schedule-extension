@@ -9,8 +9,8 @@ export function SubjectTable({
 }) {
   subjects = subjects.filter((subject) => {
     return (
-      currentDate >= new Date(subject.weeks[0]) &&
-      currentDate <= new Date(subject.weeks[1])
+      currentDate.getTime() >= new Date(subject.weeks[0]).getTime() &&
+      currentDate.getTime() <= new Date(subject.weeks[1]).getTime()
     );
   });
   return (

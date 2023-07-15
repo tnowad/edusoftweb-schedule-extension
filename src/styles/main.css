@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-color--0: #0369a1;
+  --secondary-color--0: #3290c2;
+  --tertiary-color--0: #e7f6fd;
+  --primary-color--1: #874de0;
+  --secondary-color--1: #874de0;
+  --tertiary-color--1: #f4efff;
+  --primary-color--2: #2f9074;
+  --secondary-color--2: #2f9074;
+  --tertiary-color--2: #e8f8f3;
+  --primary-color--3: #71160d;
+  --secondary-color--3: #71160d;
+  --tertiary-color--3: #ffeff0;
+  --primary-color--4: #b45309;
+  --secondary-color--4: #b45309;
+  --tertiary-color--4: #fef6e7;
+  --primary-color--5: #73347f;
+  --secondary-color--5: #73347f;
+  --tertiary-color--5: #fdf3ff;
+  --primary-color--6: #ab2f64;
+  --secondary-color--6: #ab2f64;
+  --tertiary-color--6: #fff3f8;
+  --primary-color--7: #0095c2;
+  --secondary-color--7: #0095c2;
+  --tertiary-color--7: #f1faff;
+  --primary-color--8: #65c18c;
+  --secondary-color--8: #65c18c;
+  --tertiary-color--8: #c3e9d3;
+  --primary-color--9: #874de0;
+  --secondary-color--9: #874de0;
+  --tertiary-color--9: #f4efff;
+  --primary-color--10: #874de0;
+  --secondary-color--10: #874de0;
+  --tertiary-color--10: #f4efff;
+  --primary-color--11: #874de0;
+  --secondary-color--11: #874de0;
+  --tertiary-color--11: #f4efff;
+}
