@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     watch: isDev
       ? {
-          include: [r('src/contentScripts/**/*'), r('src/components/**/*')],
+          include: [r('src/contentScripts/**/*'), r('src/components/**/*')]
         }
       : undefined,
     outDir: r('extension/dist/contentScripts'),
@@ -19,14 +19,14 @@ export default defineConfig({
     lib: {
       entry: r('src/contentScripts/index.tsx'),
       name: packageJson.name,
-      formats: ['iife'],
+      formats: ['iife']
     },
     rollupOptions: {
       output: {
         entryFileNames: 'index.global.js',
-        extend: true,
-      },
-    },
+        extend: true
+      }
+    }
   },
-  plugins: [...sharedConfig.plugins!],
+  plugins: [...sharedConfig.plugins!]
 })

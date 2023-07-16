@@ -3,7 +3,7 @@ import { parsePeriodTime } from '~/utils/parseData'
 
 export default function SubjectList({
   subjects = [],
-  currentDate = new Date(),
+  currentDate = new Date()
 }: {
   subjects: Subject[]
   currentDate?: Date
@@ -30,7 +30,7 @@ export default function SubjectList({
                   {parsePeriodTime(subject.startingPeriod).start} -{' '}
                   {
                     parsePeriodTime(
-                      subject.startingPeriod + subject.numberOfPeriods - 1,
+                      subject.startingPeriod + subject.numberOfPeriods - 1
                     ).end
                   }
                 </div>
@@ -47,7 +47,7 @@ export default function SubjectList({
                 new Date().toLocaleDateString()
                   ? "You don't have any subject today!!! 😍"
                   : `You don't have subjects on ${currentDate.toLocaleDateString(
-                      'vi-VN',
+                      'vi-VN'
                     )}`}
               </div>
               <div className="italic">-</div>

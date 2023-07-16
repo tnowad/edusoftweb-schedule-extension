@@ -8,11 +8,11 @@ export const sharedConfig: UserConfig = {
   root: r('src'),
   resolve: {
     alias: {
-      '~/': `${r('src')}/`,
-    },
+      '~/': `${r('src')}/`
+    }
   },
   define: {
-    __DEV__: isDev,
+    __DEV__: isDev
   },
   plugins: [
     // React fast refresh doesn't work, cause injecting of preambleCode into index.html
@@ -21,10 +21,10 @@ export const sharedConfig: UserConfig = {
     AutoImport({
       imports: [
         {
-          'webextension-polyfill': [['default', 'browser']],
-        },
+          'webextension-polyfill': [['default', 'browser']]
+        }
       ],
-      dts: r('src/auto-imports.d.ts'),
+      dts: r('src/auto-imports.d.ts')
     }),
 
     // rewrite assets to use relative path
@@ -35,14 +35,14 @@ export const sharedConfig: UserConfig = {
       transformIndexHtml(html, { path }) {
         return html.replace(
           /"\/assets\//g,
-          `"${relative(dirname(path), '/assets')}/`,
+          `"${relative(dirname(path), '/assets')}/`
         )
-      },
-    },
+      }
+    }
   ],
   optimizeDeps: {
-    include: ['webextension-polyfill'],
-  },
+    include: ['webextension-polyfill']
+  }
 }
 
 export default defineConfig(({ command }) => ({
@@ -51,8 +51,8 @@ export default defineConfig(({ command }) => ({
   server: {
     port,
     hmr: {
-      host: 'localhost',
-    },
+      host: 'localhost'
+    }
   },
   build: {
     outDir: r('extension/dist'),
@@ -60,15 +60,15 @@ export default defineConfig(({ command }) => ({
     sourcemap: isDev ? 'inline' : false,
     // https://developer.chrome.com/docs/webstore/program_policies/#:~:text=Code%20Readability%20Requirements
     terserOptions: {
-      mangle: false,
+      mangle: false
     },
     rollupOptions: {
       input: {
         background: r('src/background/index.html'),
         options: r('src/options/index.html'),
-        popup: r('src/popup/index.html'),
-      },
-    },
+        popup: r('src/popup/index.html')
+      }
+    }
   },
-  plugins: [...sharedConfig.plugins!],
+  plugins: [...sharedConfig.plugins!]
 }))

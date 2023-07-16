@@ -13,7 +13,7 @@ export const parseDayOfWeek = (day: string): number => {
     Wed: 4,
     Thu: 5,
     Fri: 6,
-    Sat: 7,
+    Sat: 7
   }
   return daysOfWeek[day]
 }
@@ -28,7 +28,7 @@ export const parseWeeks = (weeksText: string): number[] => {
 export const parseSubject = (tdElements: Element[]): Subject => {
   const subjectText = tdElements.reduce(
     (previous, current) => `${previous + (current as HTMLElement).innerText}|`,
-    '',
+    ''
   )
   const subjectFields = subjectText.split('|')
 
@@ -46,12 +46,12 @@ export const parseSubject = (tdElements: Element[]): Subject => {
     numberOfPeriods: parseInt(subjectFields[10]),
     room: subjectFields[11],
     lecturer: subjectFields[12],
-    weeks: parseWeeks(tdElements[13].innerHTML.split("'")[1]),
+    weeks: parseWeeks(tdElements[13].innerHTML.split("'")[1])
   }
 }
 
 export const parsePeriodTime = (
-  period: number,
+  period: number
 ): { start: string; end: string } => {
   const periodTime: Record<number, { start: string; end: string }> = {
     1: { start: '07:00', end: '07:50' },
@@ -66,7 +66,7 @@ export const parsePeriodTime = (
     10: { start: '16:40', end: '17:30' },
     11: { start: '17:40', end: '18:30' },
     12: { start: '18:30', end: '19:20' },
-    13: { start: '19:20', end: '20:10' },
+    13: { start: '19:20', end: '20:10' }
   }
   return periodTime[period]
 }

@@ -6,7 +6,7 @@ import { ContentApp } from './views/ContentApp'
 import { ThemeProvider } from '@material-tailwind/react'
 ;(() => {
   const scheduleTabButton = document.querySelector<HTMLInputElement>(
-    '#ctl00_ContentPlaceHolder1_ctl00_rad_ThuTiet',
+    '#ctl00_ContentPlaceHolder1_ctl00_rad_ThuTiet'
   )
 
   if (!scheduleTabButton?.checked) return
@@ -19,7 +19,7 @@ import { ThemeProvider } from '@material-tailwind/react'
   styleEl.setAttribute('rel', 'stylesheet')
   styleEl.setAttribute(
     'href',
-    browser.runtime.getURL('dist/contentScripts/style.css'),
+    browser.runtime.getURL('dist/contentScripts/style.css')
   )
   shadowDOM.appendChild(styleEl)
   shadowDOM.appendChild(root)
@@ -31,6 +31,6 @@ import { ThemeProvider } from '@material-tailwind/react'
         <ContentApp />
       </ThemeProvider>
     </React.StrictMode>,
-    root,
+    root
   )
 })()

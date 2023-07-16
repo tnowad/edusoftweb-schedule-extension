@@ -2,7 +2,7 @@ import type Subject from '~/interfaces/Subject'
 
 export function SubjectTable({
   subjects = [],
-  currentDate = new Date(),
+  currentDate = new Date()
 }: {
   subjects: Subject[]
   currentDate?: Date
@@ -19,7 +19,7 @@ export function SubjectTable({
         className="h-[80vh] grid overflow-hidden h-80vh gap-x-[1px] gap-y-[1px] w-full"
         style={{
           gridTemplateColumns: '5% repeat(6, 1fr) 5%',
-          gridTemplateRows: 'repeat(15, 1fr)',
+          gridTemplateRows: 'repeat(15, 1fr)'
         }}
       >
         {
@@ -32,7 +32,7 @@ export function SubjectTable({
                   key={'day top' + index}
                   style={{
                     gridColumn: index + 2,
-                    gridRow: 1,
+                    gridRow: 1
                   }}
                 >
                   <div className="text-center">Thứ {index + 2}</div>
@@ -42,7 +42,7 @@ export function SubjectTable({
                   key={'day bottom' + index}
                   style={{
                     gridColumn: index + 2,
-                    gridRow: '15 / 16',
+                    gridRow: '15 / 16'
                   }}
                 >
                   <div className="text-center">Thứ {index + 2}</div>
@@ -61,7 +61,7 @@ export function SubjectTable({
                   key={'period left' + index}
                   style={{
                     gridColumn: 1,
-                    gridRow: index + 2,
+                    gridRow: index + 2
                   }}
                 >
                   <div className="text-center">Tiết {index + 1}</div>
@@ -71,7 +71,7 @@ export function SubjectTable({
                   key={'period right' + index}
                   style={{
                     gridColumn: '8 / 9',
-                    gridRow: index + 2,
+                    gridRow: index + 2
                   }}
                 >
                   <div className="text-center">Tiết {index + 1}</div>
@@ -94,7 +94,7 @@ export function SubjectTable({
                 }`,
                 color: `var(--primary-color--${subject.color})`,
                 borderColor: `var(--secondary-color--${subject.color})`,
-                backgroundColor: `var(--tertiary-color--${subject.color})`,
+                backgroundColor: `var(--tertiary-color--${subject.color})`
               }}
             >
               <div className="flex flex-col items-center justify-center">
@@ -113,8 +113,8 @@ export function SubjectTable({
           // loop 82 - current total number of periods to create empty cells
           [
             ...Array(
-              82 - subjects.reduce((acc, cur) => acc + cur.numberOfPeriods, 0),
-            ),
+              82 - subjects.reduce((acc, cur) => acc + cur.numberOfPeriods, 0)
+            )
           ].map((_, index) => {
             return <div className="shadow-sm" key={'empty' + index} />
           })
