@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
-import { storage } from "webextension-polyfill";
-import { SubjectTable } from "~/components/SubjectTable";
-import Subject from "~/interfaces/Subject";
+import { useEffect, useState } from "react"
+import { storage } from "webextension-polyfill"
+import { SubjectTable } from "~/components/SubjectTable"
+import type Subject from "~/interfaces/Subject"
 
 export function OptionsApp() {
-  const [subjects, setSubjects] = useState<Subject[]>([]);
+  const [subjects, setSubjects] = useState<Subject[]>([])
 
   useEffect(() => {
     storage.local.get("subject").then((value) => {
-      setSubjects(value["subject"]);
-    });
-  }, []);
+      setSubjects(value.subject)
+    })
+  }, [])
 
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(new Date())
   return (
     <div className="flex items-center justify-center w-full h-[100vh] flex-col bg-slate-50">
       <div className="flex items-center justify-center mb-8">
@@ -20,9 +20,9 @@ export function OptionsApp() {
         <button
           className="flex items-center justify-center w-8 h-8 mr-4 text-white bg-[#5cbfdd] rounded-full duration-300 hover:shadow-lg hover:scale-105"
           onClick={() => {
-            const date = new Date(currentDate);
-            date.setDate(date.getDate() - 7);
-            setCurrentDate(date);
+            const date = new Date(currentDate)
+            date.setDate(date.getDate() - 7)
+            setCurrentDate(date)
           }}
         >
           <svg
@@ -46,9 +46,9 @@ export function OptionsApp() {
         <button
           className="flex items-center justify-center w-8 h-8 mr-4 text-white bg-[#5cbfdd] rounded-full duration-300 hover:shadow-lg hover:scale-105"
           onClick={() => {
-            const date = new Date(currentDate);
-            date.setDate(date.getDate() + 7);
-            setCurrentDate(date);
+            const date = new Date(currentDate)
+            date.setDate(date.getDate() + 7)
+            setCurrentDate(date)
           }}
         >
           <svg
@@ -69,5 +69,5 @@ export function OptionsApp() {
       </div>
       <SubjectTable subjects={subjects} currentDate={currentDate} />
     </div>
-  );
+  )
 }

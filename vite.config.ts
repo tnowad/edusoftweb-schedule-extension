@@ -1,8 +1,8 @@
-import { dirname, relative } from "path";
-import { defineConfig, UserConfig } from "vite";
-import AutoImport from "unplugin-auto-import/vite";
-import { r, port, isDev } from "./scripts/utils";
-import react from "@vitejs/plugin-react";
+import { dirname, relative } from "path"
+import { defineConfig, type UserConfig } from "vite"
+import AutoImport from "unplugin-auto-import/vite"
+import { r, port, isDev } from "./scripts/utils"
+import react from "@vitejs/plugin-react"
 
 export const sharedConfig: UserConfig = {
   root: r("src"),
@@ -35,15 +35,15 @@ export const sharedConfig: UserConfig = {
       transformIndexHtml(html, { path }) {
         return html.replace(
           /"\/assets\//g,
-          `"${relative(dirname(path), "/assets")}/`,
-        );
+          `"${relative(dirname(path), "/assets")}/`
+        )
       },
     },
   ],
   optimizeDeps: {
     include: ["webextension-polyfill"],
   },
-};
+}
 
 export default defineConfig(({ command }) => ({
   ...sharedConfig,
@@ -71,4 +71,4 @@ export default defineConfig(({ command }) => ({
     },
   },
   plugins: [...sharedConfig.plugins!],
-}));
+}))

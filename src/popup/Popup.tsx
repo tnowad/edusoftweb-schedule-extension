@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react";
-import { storage } from "webextension-polyfill";
-import SubjectList from "~/components/SubjectList";
-import Subject from "~/interfaces/Subject";
+import { useEffect, useState } from "react"
+import { storage } from "webextension-polyfill"
+import SubjectList from "~/components/SubjectList"
+import type Subject from "~/interfaces/Subject"
 export function Popup() {
-  const [subjects, setSubjects] = useState<Subject[]>([]);
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const [subjects, setSubjects] = useState<Subject[]>([])
+  const [currentDate, setCurrentDate] = useState(new Date())
 
   useEffect(() => {
     storage.local.get("subject").then((value) => {
-      setSubjects(value["subject"]);
-    });
-  }, []);
+      setSubjects(value.subject)
+    })
+  }, [])
 
   const handleOpenTab = () => {
-    browser.runtime.openOptionsPage();
-  };
+    browser.runtime.openOptionsPage()
+  }
   return (
     <div className="font-sans text-base bg-slate-50 w-[450px] max-w-[600px]">
       <div className="container max-w-screen-md px-4 py-8 mx-auto">
@@ -41,9 +41,9 @@ export function Popup() {
           <button
             className="flex items-center justify-center w-8 h-8 mr-4 text-white bg-[#5cbfdd] rounded-full duration-300 hover:shadow-lg hover:scale-105"
             onClick={() => {
-              const date = new Date(currentDate);
-              date.setDate(date.getDate() - 1);
-              setCurrentDate(date);
+              const date = new Date(currentDate)
+              date.setDate(date.getDate() - 1)
+              setCurrentDate(date)
             }}
           >
             <svg
@@ -67,9 +67,9 @@ export function Popup() {
           <button
             className="flex items-center justify-center w-8 h-8 mr-4 text-white bg-[#5cbfdd] rounded-full duration-300 hover:shadow-lg hover:scale-105"
             onClick={() => {
-              const date = new Date(currentDate);
-              date.setDate(date.getDate() + 1);
-              setCurrentDate(date);
+              const date = new Date(currentDate)
+              date.setDate(date.getDate() + 1)
+              setCurrentDate(date)
             }}
           >
             <svg
@@ -91,5 +91,5 @@ export function Popup() {
         <SubjectList subjects={subjects} currentDate={currentDate} />
       </div>
     </div>
-  );
+  )
 }

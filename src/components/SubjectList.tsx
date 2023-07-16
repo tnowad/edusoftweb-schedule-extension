@@ -1,22 +1,22 @@
-import type Subject from "~/interfaces/Subject";
-import { parsePeriodTime } from "~/utils/parseData";
+import type Subject from "~/interfaces/Subject"
+import { parsePeriodTime } from "~/utils/parseData"
 
 export default function SubjectList({
   subjects = [],
   currentDate = new Date(),
 }: {
-  subjects: Subject[];
-  currentDate?: Date;
+  subjects: Subject[]
+  currentDate?: Date
 }) {
-  console.log(subjects);
+  console.log(subjects)
   subjects = subjects.filter((subject) => {
-    const currentDayOfWeek = currentDate.getDay();
+    const currentDayOfWeek = currentDate.getDay()
     return (
       subject.dayOfWeek - 1 === currentDayOfWeek &&
       currentDate.getTime() >= new Date(subject.weeks[0]).getTime() &&
       currentDate.getTime() <= new Date(subject.weeks[1]).getTime()
-    );
-  });
+    )
+  })
   return (
     <ul className="space-y-4">
       {subjects.length > 0 ? (
@@ -56,5 +56,5 @@ export default function SubjectList({
         </li>
       )}
     </ul>
-  );
+  )
 }

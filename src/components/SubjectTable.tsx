@@ -1,18 +1,18 @@
-import type Subject from "~/interfaces/Subject";
+import type Subject from "~/interfaces/Subject"
 
 export function SubjectTable({
   subjects = [],
   currentDate = new Date(),
 }: {
-  subjects: Subject[];
-  currentDate?: Date;
+  subjects: Subject[]
+  currentDate?: Date
 }) {
   subjects = subjects.filter((subject) => {
     return (
       currentDate.getTime() >= new Date(subject.weeks[0]).getTime() &&
       currentDate.getTime() <= new Date(subject.weeks[1]).getTime()
-    );
-  });
+    )
+  })
   return (
     <div className="flex flex-col items-center justify-center w-11/12 min-w-[1200px] max-w-[1400px] h-[80vh] box-border p-2 rounded-xl shadow-md">
       <div
@@ -48,7 +48,7 @@ export function SubjectTable({
                   <div className="text-center">Thứ {index + 2}</div>
                 </div>
               </>
-            );
+            )
           })
         }
         {
@@ -77,7 +77,7 @@ export function SubjectTable({
                   <div className="text-center">Tiết {index + 1}</div>
                 </div>
               </>
-            );
+            )
           })
         }
         {subjects.map((subject, index) => {
@@ -107,7 +107,7 @@ export function SubjectTable({
                 )}
               </div>
             </div>
-          );
+          )
         })}
         {
           // loop 82 - current total number of periods to create empty cells
@@ -116,10 +116,10 @@ export function SubjectTable({
               82 - subjects.reduce((acc, cur) => acc + cur.numberOfPeriods, 0)
             ),
           ].map((_, index) => {
-            return <div className="shadow-sm" key={"empty" + index} />;
+            return <div className="shadow-sm" key={"empty" + index} />
           })
         }
       </div>
     </div>
-  );
+  )
 }
