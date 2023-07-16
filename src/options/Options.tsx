@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react"
-import { storage } from "webextension-polyfill"
-import { SubjectTable } from "~/components/SubjectTable"
-import type Subject from "~/interfaces/Subject"
+import { useEffect, useState } from 'react'
+import { storage } from 'webextension-polyfill'
+import { SubjectTable } from '~/components/SubjectTable'
+import type Subject from '~/interfaces/Subject'
 
 export function OptionsApp() {
   const [subjects, setSubjects] = useState<Subject[]>([])
 
   useEffect(() => {
-    storage.local.get("subject").then((value) => {
+    storage.local.get('subject').then((value) => {
       setSubjects(value.subject)
     })
   }, [])
@@ -41,7 +41,7 @@ export function OptionsApp() {
           </svg>
         </button>
         <div className="flex items-center justify-center w-24 font-semibold">
-          {currentDate.toLocaleDateString("vi-VN")}
+          {currentDate.toLocaleDateString('vi-VN')}
         </div>
         <button
           className="flex items-center justify-center w-8 h-8 mr-4 text-white bg-[#5cbfdd] rounded-full duration-300 hover:shadow-lg hover:scale-105"

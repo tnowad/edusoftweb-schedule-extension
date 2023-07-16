@@ -1,17 +1,17 @@
-import { useState } from "react"
-import { CheckCircleIcon } from "@heroicons/react/24/solid"
-import { fillColor, parseSubject } from "~/utils/parseData"
-import { Button, Alert, Typography } from "@material-tailwind/react"
-import type Subject from "~/interfaces/Subject"
-import "~/styles"
-import { storage } from "webextension-polyfill"
+import { useState } from 'react'
+import { CheckCircleIcon } from '@heroicons/react/24/solid'
+import { fillColor, parseSubject } from '~/utils/parseData'
+import { Button, Alert, Typography } from '@material-tailwind/react'
+import type Subject from '~/interfaces/Subject'
+import '~/styles'
+import { storage } from 'webextension-polyfill'
 
 export const ContentApp = () => {
   const [showAlert, setShowAlert] = useState(false)
   const getData = (): Subject[] => {
-    const trElements = Array.from(document.querySelectorAll(".body-table tr"))
+    const trElements = Array.from(document.querySelectorAll('.body-table tr'))
     const data = trElements.map((trElement) =>
-      parseSubject(Array.from(trElement.querySelectorAll("td")))
+      parseSubject(Array.from(trElement.querySelectorAll('td')))
     )
 
     return fillColor(data)
@@ -35,7 +35,7 @@ export const ContentApp = () => {
           onResize={() => {}}
           onResizeCapture={() => {}}
         >
-          {" "}
+          {' '}
           Sync Schedule
         </Button>
       </div>

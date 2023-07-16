@@ -4,23 +4,23 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ["standard-with-typescript", "plugin:react/recommended"],
+  extends: ['standard-with-typescript', 'plugin:react/recommended'],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: "script",
+        sourceType: 'script',
       },
     },
   ],
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: "tsconfig.json",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: 'tsconfig.json',
   },
-  plugins: ["react"],
+  plugins: ['react'],
   rules: {},
 }
