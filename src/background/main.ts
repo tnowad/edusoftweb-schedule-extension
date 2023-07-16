@@ -3,7 +3,7 @@ import browser from 'webextension-polyfill'
 // only on dev mode
 if (import.meta.hot != null) {
   // @ts-expect-error for background HMR
-  import('/@vite/client')
+  import('@vite/client')
   // load latest content script
   import('./contentScriptHMR')
 }
