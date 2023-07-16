@@ -1,7 +1,7 @@
-import Subject from "~/interfaces/Subject";
+import type Subject from "~/interfaces/Subject";
 
 export function SubjectTable({
-  subjects,
+  subjects = [],
   currentDate = new Date(),
 }: {
   subjects: Subject[];
@@ -83,7 +83,9 @@ export function SubjectTable({
         {subjects.map((subject, index) => {
           return (
             <div
-              className={`shadow-sm bg-white flex items-center justify-center border-l duration-500 hover:shadow-lg hover:scale-[1.02]`}
+              className={
+                "shadow-sm bg-white flex items-center justify-center border-l duration-500 hover:shadow-lg hover:scale-[1.02]"
+              }
               key={"subject" + index}
               style={{
                 gridColumn: subject.dayOfWeek,
@@ -111,7 +113,7 @@ export function SubjectTable({
           // loop 82 - current total number of periods to create empty cells
           [
             ...Array(
-              82 - subjects.reduce((acc, cur) => acc + cur.numberOfPeriods, 0),
+              82 - subjects.reduce((acc, cur) => acc + cur.numberOfPeriods, 0)
             ),
           ].map((_, index) => {
             return <div className="shadow-sm" key={"empty" + index} />;
