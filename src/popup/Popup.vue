@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Icon } from '@iconify/vue'
 import { formatDate } from '@/utils/dateUtils'
 import SubjectList from '@/components/SubjectList.vue'
 import { filterSubjectsByDay } from '@/utils/subjectUtils'
@@ -54,40 +55,14 @@ watch([dateShowing], () => {
         className="flex items-center justify-center w-8 h-8 mr-4 text-white bg-[#5cbfdd] rounded-full duration-300 hover:shadow-lg hover:scale-105"
         @click="goToPreviousDay"
       >
-        <svg
-          className="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
+        <Icon icon="mdi:less-than" class="text-2xl" />
       </button>
       <input v-model="dateShowing" type="date" class="bg-transparent outline-none mx-3">
       <button
         className="flex items-center justify-center w-8 h-8 mr-4 text-white bg-[#5cbfdd] rounded-full duration-300 hover:shadow-lg hover:scale-105"
         @click="goToNextDay"
       >
-        <svg
-          className="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
+        <Icon icon="mdi:greater-than" class="text-2xl" />
       </button>
     </div>
     <SubjectList :subjects="subjects" />
