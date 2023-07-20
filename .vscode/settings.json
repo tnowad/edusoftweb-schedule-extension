@@ -1,0 +1,21 @@
+{
+  "cSpell.words": [
+    "demi",
+    "iife",
+    "kolorist",
+    "unplugin",
+    "Vitesse",
+    "vueuse",
+    "webext"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "path-intellisense.mappings": {
+    "@/": "${workspaceFolder}/src/"
+  }
+}
