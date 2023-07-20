@@ -9,6 +9,18 @@ function openOptionsPage() {
 const subjects = ref(filterSubjectsByDay(storageSchedule.value, new Date()))
 const dateShowing = ref(formatDate(new Date()))
 
+function goToPreviousDay() {
+  const currentDate = new Date(dateShowing.value)
+  currentDate.setDate(currentDate.getDate() - 1)
+  dateShowing.value = formatDate(currentDate)
+}
+
+function goToNextDay() {
+  const currentDate = new Date(dateShowing.value)
+  currentDate.setDate(currentDate.getDate() + 1)
+  dateShowing.value = formatDate(currentDate)
+}
+
 watch([dateShowing], () => {
   subjects.value = filterSubjectsByDay(storageSchedule.value, new Date(dateShowing.value))
 })
@@ -40,6 +52,7 @@ watch([dateShowing], () => {
     <div className="flex items-center justify-center mb-3">
       <button
         className="flex items-center justify-center w-8 h-8 mr-4 text-white bg-[#5cbfdd] rounded-full duration-300 hover:shadow-lg hover:scale-105"
+        @click="goToPreviousDay"
       >
         <svg
           className="w-4 h-4"
@@ -59,6 +72,7 @@ watch([dateShowing], () => {
       <input v-model="dateShowing" type="date">
       <button
         className="flex items-center justify-center w-8 h-8 mr-4 text-white bg-[#5cbfdd] rounded-full duration-300 hover:shadow-lg hover:scale-105"
+        @click="goToNextDay"
       >
         <svg
           className="w-4 h-4"
