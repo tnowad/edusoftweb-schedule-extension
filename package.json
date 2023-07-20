@@ -1,7 +1,7 @@
 {
   "name": "edusoftweb-schedule",
   "displayName": "Edusoftweb Schedule",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "packageManager": "pnpm@8.3.1",
   "description": "Edusoftweb Schedule is a user-friendly educational web app that simplifies course scheduling and management. Students can easily organize their academic schedules, view course details, and manage enrollments.",
