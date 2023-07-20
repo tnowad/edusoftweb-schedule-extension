@@ -69,7 +69,7 @@ watch([dateShowing], () => {
           />
         </svg>
       </button>
-      <input v-model="dateShowing" type="date">
+      <input v-model="dateShowing" type="date" class="bg-transparent outline-none mx-3">
       <button
         className="flex items-center justify-center w-8 h-8 mr-4 text-white bg-[#5cbfdd] rounded-full duration-300 hover:shadow-lg hover:scale-105"
         @click="goToNextDay"

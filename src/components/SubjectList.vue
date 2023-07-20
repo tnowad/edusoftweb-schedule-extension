@@ -9,7 +9,7 @@ defineProps<{ subjects: Subject[] }>()
   <div>
     <ul v-if="subjects.length > 0" class="space-y-4">
       <li v-for="(subject, index) in subjects" :key="index">
-        <div class="px-4 py-3 transition-shadow duration-500 bg-white rounded-lg shadow-md hover:shadow-lg">
+        <div class="px-4 py-3 transition-shadow duration-500 rounded-lg shadow-md hover:shadow-lg">
           <div class="flex items-center justify-between">
             <div class="font-bold w-[200px]">
               {{ subject.subjectName }}
@@ -26,14 +26,9 @@ defineProps<{ subjects: Subject[] }>()
       </li>
     </ul>
     <ul v-else>
-      <div class="px-4 py-3 transition-shadow duration-500 bg-white rounded-lg shadow-md hover:shadow-lg">
-        <div class="flex items-center justify-between">
-          <div class="font-bold">
-            "You don't have any subject today!!! 😍"
-          </div>
-          <div class="italic">
-            -
-          </div>
+      <div class="px-4 py-3 transition-shadow duration-500 rounded-lg shadow-md hover:shadow-lg">
+        <div class="font-bold text-center">
+          You don't have any subject today!!! 😍
         </div>
       </div>
     </ul>
