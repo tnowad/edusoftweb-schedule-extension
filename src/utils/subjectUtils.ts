@@ -53,3 +53,33 @@ export const assignColorsToSubjects = (data: Subject[]): Subject[] => {
 
   return data
 }
+
+export const filterSubjectsByDay = (subjects: Subject[], date: Date): Subject[] => {
+  const currentDayOfWeek = date.getDay()
+
+  const filteredSubjects = subjects.filter((subject) => {
+    const subjectDayOfWeek = subject.dayOfWeek - 1
+    const startWeek = new Date(subject.weeks.start).getTime()
+    const endWeek = new Date(subject.weeks.end).getTime()
+
+    const isSameDayOfWeek = subjectDayOfWeek === currentDayOfWeek
+    const isWithinWeekRange = date.getTime() >= startWeek && date.getTime() <= endWeek
+
+    return isSameDayOfWeek && isWithinWeekRange
+  })
+
+  filteredSubjects.sort((a, b) => a.startingPeriod - b.startingPeriod)
+
+  return filteredSubjects
+}
+
+export const filterSubjectsByWeakOfDay = (subjects: Subject[], date: Date): Subject[] => {
+  return subjects.filter((subject) => {
+    const startWeek = new Date(subject.weeks.start).getTime()
+    const endWeek = new Date(subject.weeks.end).getTime()
+
+    const isWithinWeekRange = date.getTime() >= startWeek && date.getTime() <= endWeek
+
+    return isWithinWeekRange
+  })
+}
