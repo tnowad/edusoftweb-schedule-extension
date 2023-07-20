@@ -1,17 +1,18 @@
-/* eslint-disable no-console */
-import { onMessage } from 'webext-bridge/content-script'
 import { createApp } from 'vue'
 import App from './views/App.vue'
 import { setupApp } from '@/logic/common-setup'
 
 // Firefox `browser.tabs.executeScript()` requires scripts return a primitive value
 (() => {
-  console.info('[vitesse-webext] Hello world from content script')
+  // console.info('[vitesse-webext] Hello world from content script')
 
   // communication example: send previous tab title from background page
-  onMessage('tab-prev', ({ data }) => {
-    console.log(`[vitesse-webext] Navigate from page "${data.title}"`)
-  })
+  // onMessage('tab-prev', ({ data }) => {
+  //   console.log(`[vitesse-webext] Navigate from page "${data.title}"`)
+  // })
+
+  if (!document.getElementById('ctl00_ContentPlaceHolder1_ctl00_rad_ThuTiet'))
+    return
 
   // mount component to context window
   const container = document.createElement('div')
