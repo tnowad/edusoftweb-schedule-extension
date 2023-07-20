@@ -3,9 +3,9 @@ import { Icon } from '@iconify/vue'
 import SubjectTable from './SubjectTable.vue'
 import { storageSchedule } from '@/logic'
 import { formatDate } from '@/utils/dateUtils'
-import { filterSubjectsByDay } from '@/utils/subjectUtils'
+import { filterSubjectsByWeakOfDay } from '@/utils/subjectUtils'
 
-const subjects = ref(filterSubjectsByDay(storageSchedule.value, new Date()))
+const subjects = ref(filterSubjectsByWeakOfDay(storageSchedule.value, new Date()))
 const dateShowing = ref(formatDate(new Date()))
 
 function goToPreviousWeek() {
@@ -21,7 +21,7 @@ function goToNextWeek() {
 }
 
 watch([dateShowing], () => {
-  subjects.value = filterSubjectsByDay(storageSchedule.value, new Date(dateShowing.value))
+  subjects.value = filterSubjectsByWeakOfDay(storageSchedule.value, new Date(dateShowing.value))
 })
 </script>
 
@@ -42,6 +42,6 @@ watch([dateShowing], () => {
         <Icon icon="mdi:greater-than" class="text-2xl" />
       </button>
     </div>
-    <SubjectTable />
+    <SubjectTable :subjects="subjects" />
   </div>
 </template>
