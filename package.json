@@ -5,6 +5,15 @@
   "private": true,
   "packageManager": "pnpm@8.3.1",
   "description": "Edusoftweb Schedule is a user-friendly educational web app that simplifies course scheduling and management. Students can easily organize their academic schedules, view course details, and manage enrollments.",
+  "author": {
+    "email": "tnowad@gmail.com",
+    "name": "Nguyen Minh Tuan",
+    "url": "https://github.com/tnowad"
+  },
+  "homepage": "https://github.com/tnowad/edusoftweb-schedule-extension",
+  "categories": [
+    "Education"
+  ],
   "scripts": {
     "dev": "npm run clear && cross-env NODE_ENV=development run-p dev:*",
     "dev-firefox": "npm run clear && cross-env NODE_ENV=development EXTENSION=firefox run-p dev:*",
