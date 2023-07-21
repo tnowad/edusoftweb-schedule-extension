@@ -18,6 +18,14 @@ The extension is designed to work with EdusoftWeb, a web-based platform used for
 - Save your schedule locally for easy access and quick reference.
 - Responsive design for various screen sizes and devices.
 
+## Tech Stack
+
+The EdusoftWeb Schedule Extension is built using the following technologies:
+
+- Vue.js - A progressive JavaScript framework for building user interfaces.
+- TypeScript - A superset of JavaScript that adds static typing to the language.
+- Unocss - A utility-first CSS framework that allows for efficient styling without unnecessary bloat.
+
 ## Installation
 
 The extension is available for installation on popular web browsers like Google Chrome, Mozilla Firefox, and Microsoft Edge. Follow the steps below to install the extension:
