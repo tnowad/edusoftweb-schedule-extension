@@ -1,132 +1,58 @@
-# WebExtension Vite Starter
+# EdusoftWeb Schedule Extension
 
-A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.chrome.com/docs/extensions/reference/), [FireFox](https://addons.mozilla.org/en-US/developers/), etc.) starter template.
+![GitHub last commit](https://img.shields.io/github/last-commit/tnowad/edusoftweb-schedule-extension)
+![GitHub license](https://img.shields.io/github/license/tnowad/edusoftweb-schedule-extension)
+![GitHub stars](https://img.shields.io/github/stars/tnowad/edusoftweb-schedule-extension?style=social)
 
-<p align="center">
-<sub>Popup</sub><br/>
-<img width="655" src="https://user-images.githubusercontent.com/11247099/126741643-813b3773-17ff-4281-9737-f319e00feddc.png"><br/>
-<sub>Options Page</sub><br/>
-<img width="655" src="https://user-images.githubusercontent.com/11247099/126741653-43125b62-6578-4452-83a7-bee19be2eaa2.png"><br/>
-<sub>Inject Vue App into the Content Script</sub><br/>
-<img src="https://user-images.githubusercontent.com/11247099/130695439-52418cf0-e186-4085-8e19-23fe808a274e.png">
-</p>
+## Overview
+
+EdusoftWeb Schedule Extension is a browser extension that enhances your EdusoftWeb experience by displaying your class schedule in a more visually appealing and interactive timetable format.
+
+The extension is designed to work with EdusoftWeb, a web-based platform used for managing educational institutions' schedules and resources. With this extension, students can easily visualize and manage their daily class schedules, making it convenient and efficient to plan their study routine.
 
 ## Features
 
-- ⚡️ **Instant HMR** - use **Vite** on dev (no more refresh!)
-- 🥝 Vue 3 - Composition API, [`<script setup>` syntax](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md) and more!
-- 💬 Effortless communications - powered by [`webext-bridge`](https://github.com/antfu/webext-bridge) and [VueUse](https://github.com/antfu/vueuse) storage
-- 🌈 [UnoCSS](https://github.com/unocss/unocss) - The instant on-demand Atomic CSS engine.
-- 🦾 [TypeScript](https://www.typescriptlang.org/) - type safe
-- 📦 [Components auto importing](./src/components)
-- 🌟 [Icons](./src/components) - Access to icons from any iconset directly
-- 🖥 Content Script - Use Vue even in content script
-- 🌍 WebExtension - isomorphic extension for Chrome, Firefox, and others
-- 📃 Dynamic `manifest.json` with full type support
+- Display class schedule in a dynamic timetable format.
+- Color-coded subjects for easy identification.
+- View additional details such as subject names, room numbers, and practice sessions.
+- Save your schedule locally for easy access and quick reference.
+- Responsive design for various screen sizes and devices.
 
-## Pre-packed
+## Installation
 
-### WebExtension Libraries
+The extension is available for installation on popular web browsers like Google Chrome, Mozilla Firefox, and Microsoft Edge. Follow the steps below to install the extension:
 
-- [`webextension-polyfill`](https://github.com/mozilla/webextension-polyfill) - WebExtension browser API Polyfill with types
-- [`webext-bridge`](https://github.com/antfu/webext-bridge) - effortlessly communication between contexts
-
-### Vite Plugins
-
-- [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use `browser` and Vue Composition API without importing
-- [`unplugin-vue-components`](https://github.com/antfu/vite-plugin-components) - components auto import
-- [`unplugin-icons`](https://github.com/antfu/unplugin-icons) - icons as components
-  - [Iconify](https://iconify.design) - use icons from any icon sets [🔍Icônes](https://icones.netlify.app/)
-
-### Vue Plugins
-
-- [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
-
-### UI Frameworks
-
-- [UnoCSS](https://github.com/unocss/unocss) - the instant on-demand Atomic CSS engine
-
-### Coding Style
-
-- Use Composition API with [`<script setup>` SFC syntax](https://github.com/vuejs/rfcs/pull/227)
-- [ESLint](https://eslint.org/) with [@antfu/eslint-config](https://github.com/antfu/eslint-config), single quotes, no semi
-
-### Dev tools
-
-- [TypeScript](https://www.typescriptlang.org/)
-- [pnpm](https://pnpm.js.org/) - fast, disk space efficient package manager
-- [esno](https://github.com/antfu/esno) - TypeScript / ESNext node runtime powered by esbuild
-- [npm-run-all](https://github.com/mysticatea/npm-run-all) - Run multiple npm-scripts in parallel or sequential
-- [web-ext](https://github.com/mozilla/web-ext) - Streamlined experience for developing web extensions
-
-## Use the Template
-
-### GitHub Template
-
-[Create a repo from this template on GitHub](https://github.com/antfu/vitesse-webext/generate).
-
-### Clone to local
-
-If you prefer to do it manually with the cleaner git history
-
-> If you don't have pnpm installed, run: npm install -g pnpm
-
-```bash
-npx degit antfu/vitesse-webext my-webext
-cd my-webext
-pnpm i
-```
+1. Clone or download this repository to your local machine.
+2. Open your web browser.
+3. Go to the browser's extension management page:
+   - **Google Chrome**: `chrome://extensions/`
+   - **Mozilla Firefox**: `about:addons`
+   - **Microsoft Edge**: `edge://extensions/`
+4. Enable the developer mode (usually found in the top right corner).
+5. Click on "Load unpacked" or "Load extension" (depends on the browser).
+6. Select the directory where you cloned or downloaded this repository.
+7. The extension should now be installed and ready to use.
 
 ## Usage
 
-### Folders
+To use the EdusoftWeb Schedule Extension, follow these simple steps:
 
-- `src` - main source.
-  - `contentScript` - scripts and components to be injected as `content_script`
-  - `background` - scripts for background.
-  - `components` - auto-imported Vue components that are shared in popup and options page.
-  - `styles` - styles shared in popup and options page
-  - `assets` - assets used in Vue components
-  - `manifest.ts` - manifest for the extension.
-- `extension` - extension package root.
-  - `assets` - static assets (mainly for `manifest.json`).
-  - `dist` - built files, also serve stub entry for Vite on development.
-- `scripts` - development and bundling helper scripts.
+1. Open your web browser and navigate to the EdusoftWeb platform.
+2. Log in to your EdusoftWeb account using your credentials.
+3. After logging in, click on the "View Schedule" option to access your class schedule.
+4. Once you view your schedule, the extension will automatically detect the schedule and display a "Save" button.
+5. Click on the "Save" button to store your class schedule locally. This allows you to access your schedule even when you are offline.
 
-### Development
+## Contributing
 
-```bash
-pnpm dev
-```
+Contributions to this project are welcome. If you encounter any issues or have ideas for improvements, please open an issue or submit a pull request.
 
-Then **load extension in browser with the `extension/` folder**.
+When contributing code, please follow the existing code style and include tests for new features or bug fixes.
 
-For Firefox developers, you can run the following command instead:
+## License
 
-```bash
-pnpm start:firefox
-```
+This project is licensed under the [MIT License](LICENSE).
 
-`web-ext` auto reload the extension when `extension/` files changed.
+## Acknowledgments
 
-> While Vite handles HMR automatically in the most of the case, [Extensions Reloader](https://chrome.google.com/webstore/detail/fimgfedafeadlieiabdeeaodndnlbhid) is still recommanded for cleaner hard reloading.
-
-### Build
-
-To build the extension, run
-
-```bash
-pnpm build
-```
-
-And then pack files under `extension`, you can upload `extension.crx` or `extension.xpi` to appropriate extension store.
-
-## Credits
-
-[![Volta](https://user-images.githubusercontent.com/904724/195351818-9e826ea9-12a0-4b06-8274-352743cd2047.png)](https://volta.net)
-
-This template is originally made for the [volta.net](https://volta.net) browser extension.
-
-## Variations
-
-This is a variant of [Vitesse](https://github.com/antfu/vitesse), check out the [full variations list](https://github.com/antfu/vitesse#variations).
+Special thanks to the Vue.js community and other open-source libraries that made this extension possible.
