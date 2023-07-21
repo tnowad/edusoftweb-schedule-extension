@@ -6,7 +6,7 @@ interface SubjectColor {
   tertiary: string
 }
 
-const subjectColors: SubjectColor[] = [
+export const defaultSubjectColors: SubjectColor[] = [
   {
     primary: '#0369a1',
     secondary: '#3290c2',
@@ -69,4 +69,4 @@ const subjectColors: SubjectColor[] = [
   },
 ]
 
-export const storageSubjectColor = useStorageLocal<SubjectColor[]>('subject-color', subjectColors)
+export const storageSubjectColor = useStorageLocal<SubjectColor[]>('subject-color', defaultSubjectColors)
