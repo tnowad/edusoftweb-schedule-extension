@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import type Subject from '@/interfaces/Subject'
+import { storageSubjectColor } from '@/logic'
 
-defineProps<{ subject: Subject }>()
+const { subject } = defineProps<{ subject: Subject }>()
+
+const subjectColors = storageSubjectColor.value[subject.color!]
 </script>
 
 <template>
@@ -10,9 +13,9 @@ defineProps<{ subject: Subject }>()
     :style="{
       gridColumn: subject.dayOfWeek,
       gridRow: `${subject.startingPeriod + 1} / span ${subject.numberOfPeriods}`,
-      color: `var(--primary-color--${subject.color})`,
-      borderColor: `var(--secondary-color--${subject.color})`,
-      backgroundColor: `var(--tertiary-color--${subject.color})`,
+      color: subjectColors.primary,
+      borderColor: subjectColors.secondary,
+      backgroundColor: subjectColors.tertiary,
     }"
   >
     <div class="flex flex-col items-center justify-center">
