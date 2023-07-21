@@ -1,5 +1,7 @@
 # EdusoftWeb Schedule Extension
 
+<img width="100px" src="./extension/assets/icon-512.png" />
+
 ![GitHub last commit](https://img.shields.io/github/last-commit/tnowad/edusoftweb-schedule-extension)
 ![GitHub license](https://img.shields.io/github/license/tnowad/edusoftweb-schedule-extension)
 ![GitHub stars](https://img.shields.io/github/stars/tnowad/edusoftweb-schedule-extension?style=social)
@@ -9,6 +11,11 @@
 EdusoftWeb Schedule Extension is a browser extension that enhances your EdusoftWeb experience by displaying your class schedule in a more visually appealing and interactive timetable format.
 
 The extension is designed to work with EdusoftWeb, a web-based platform used for managing educational institutions' schedules and resources. With this extension, students can easily visualize and manage their daily class schedules, making it convenient and efficient to plan their study routine.
+
+<p align="center">
+<img src="./assets/popup.png" />
+<img src="./assets/schedule-table.png" />
+</p>
 
 ## Features
 
