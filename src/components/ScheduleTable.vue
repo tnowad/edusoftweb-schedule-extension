@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+import html2canvas from 'html2canvas'
 import SubjectTable from './SubjectTable.vue'
 import { storageSchedule } from '@/logic'
 import { formatDate } from '@/utils/dateUtils'
@@ -23,6 +24,19 @@ function goToNextWeek() {
 watch([dateShowing], () => {
   subjects.value = filterSubjectsByWeakOfDay(storageSchedule.value, new Date(dateShowing.value))
 })
+
+function exportTableToImage() {
+  const tableContainer = document.querySelector('#subject-table-container > div')
+  if (tableContainer) {
+    html2canvas(tableContainer as HTMLElement).then((canvas) => {
+      const image = canvas.toDataURL('image/png')
+      const link = document.createElement('a')
+      link.download = 'subject_table.png'
+      link.href = image
+      link.click()
+    })
+  }
+}
 </script>
 
 <template>
@@ -41,7 +55,13 @@ watch([dateShowing], () => {
       >
         <Icon icon="mdi:greater-than" class="text-2xl" />
       </button>
+      <button
+        class="flex items-center justify-center w-8 h-8 mr-4 text-white bg-[#5cbfdd] rounded-full duration-300 hover:shadow-lg hover:scale-105"
+        @click="exportTableToImage"
+      >
+        <Icon icon="mdi:download" class="text-2xl" />
+      </button>
     </div>
-    <SubjectTable :subjects="subjects" />
+    <SubjectTable id="subject-table-container" class="bg-slate-50" :subjects="subjects" />
   </div>
 </template>
