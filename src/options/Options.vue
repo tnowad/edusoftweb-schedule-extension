@@ -18,7 +18,7 @@ const toggleSettings = () => {
         <Icon icon="icon-park-outline:config" />
       </button>
     </div>
-    <div v-if="showSettings" class="fixed bottom-16 right-4 bg-white rounded-lg shadow-md p-4">
+    <div v-if="showSettings" class="fixed bottom-16 right-4 bg-white rounded-lg shadow-md p-4 z-1">
       <p>Tab</p>
       <div>
         <button
