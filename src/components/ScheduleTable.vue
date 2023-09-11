@@ -21,7 +21,7 @@ function goToNextWeek() {
   dateShowing.value = formatDate(currentDate)
 }
 
-watch([dateShowing], () => {
+watch([dateShowing, storageSchedule], () => {
   subjects.value = filterSubjectsByWeakOfDay(storageSchedule.value, new Date(dateShowing.value))
 })
 

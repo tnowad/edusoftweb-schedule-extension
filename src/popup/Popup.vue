@@ -22,7 +22,7 @@ function goToNextDay() {
   dateShowing.value = formatDate(currentDate)
 }
 
-watch([dateShowing], () => {
+watch([dateShowing, storageSchedule], () => {
   subjects.value = filterSubjectsByDay(storageSchedule.value, new Date(dateShowing.value))
 })
 </script>
